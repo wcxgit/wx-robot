@@ -126,7 +126,7 @@ async function onMessage (msg) {
     if (/^['A-Za-z ]+$/.test(content)) {
       console.log('发送语音链接消息')
       // 如果内容中有英文，提供语音
-      await room.say(`https://dict.youdao.com/dictvoice?type=2&audio=${content}`)
+      await room.say(`https://dict.youdao.com/dictvoice?type=2&audio=` + urlencode(content))
     } else {
       // 将文本翻译成英语
       console.log('发送中文翻译信息')
